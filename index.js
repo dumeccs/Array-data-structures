@@ -65,7 +65,8 @@ class MyArray  {
 
         else{
             for(let i = startIndex; i < this.length; i++){
-                if(i === this.length - 1  ){
+                if(i === this.length - 1
+                      ){
                     returnedString += this.data[i] 
                 }
                 else{
