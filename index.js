@@ -37,6 +37,7 @@ class MyArray  {
             this.data[i] = this.data[i - 1]
         }
         this.data[0] = item
+        this.length++
         return this.data
     }
     insert(item , index) {
@@ -44,8 +45,39 @@ class MyArray  {
             this.data[i] = this.data[i - 1]
         }
         this.data[index] = item
+        this.length++
         return this.data
     }
+
+    slice(startIndex, endIndex){
+        let returnedString = ''
+        if(endIndex){
+            for(let i = startIndex; i < endIndex; i++){
+                if(i === endIndex - 1){
+                    returnedString += this.data[i] 
+                }
+                else{
+                    returnedString += this.data[i] + ', '
+                }
+                
+            }
+        }
+
+        else{
+            for(let i = startIndex; i < this.length; i++){
+                if(i === this.length - 1  ){
+                    returnedString += this.data[i] 
+                }
+                else{
+                    returnedString += this.data[i] + ', '
+                }
+                
+            }
+        }
+        
+        return returnedString
+    }
+
 
 }
 
@@ -57,7 +89,9 @@ console.log(newArray.push('orange'))
 console.log(newArray.push('mango'))
 console.log(newArray.push('Pawpaw'))
 console.log(newArray.push('Guava'))
-console.log(newArray.push('Sour sop'))
+console.log(newArray.push('Sour-sop'))
 console.log(newArray.unshift('I am the one'))
-console.log(newArray.insert('2 here is not second 😭',2))
-console.log(newArray)
+console.log(newArray.insert('2 here is not second 😭',5))
+console.log(newArray.slice(2))
+console.log(newArray.length)
+// console.log(newArray)
